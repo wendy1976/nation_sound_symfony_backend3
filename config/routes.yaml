@@ -3,3 +3,63 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+api_concerts:
+    path: /api/concerts
+    controller: App\Controller\ConcertApiController::getConcerts
+    methods: GET
+
+api_passes:
+    path: /api/passes
+    controller: App\Controller\PassApiController::getPasses
+    methods: GET
+
+get_notifications:
+    path: /api/notifications
+    controller: App\Controller\NotificationController::getNotifications
+    methods: GET
+
+get_notificationInfos:
+    path: /api/notificationInfos
+    controller: App\Controller\NotificationInfoController::getNotificationInfos
+    methods: GET
+
+get_locations:
+    path: /api/locations
+    controller: App\Controller\LocationController::getLocations
+    methods: GET
+
+get_securityInfos:
+    path: /api/securityInfos
+    controller: App\Controller\SecurityInfoController::getSecurityInfo
+    methods: GET
+
+# Route pour la page de connexion
+app_login:
+    path: /login
+    controller: 'App\Controller\SecurityController::login'
+    methods: ["GET", "POST"]
+
+# Route pour le formulaire de contact
+app_contact:
+    path: /contact
+    controller: 'App\Controller\SecurityController::contact'
+    methods: ["GET", "POST"]
+
+# Route pour créer un compte
+app_register:
+    path: /register
+    controller: 'App\Controller\SecurityController::register'
+    methods: ["GET", "POST"]
+
+admin_login:
+    path: /admin/login
+    controller: App\Controller\SecurityController::adminLogin
+
+admin_logout:
+    path: /admin/logout
+    controller: App\Controller\SecurityController::adminLogout
